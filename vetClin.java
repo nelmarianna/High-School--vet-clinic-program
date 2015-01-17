@@ -34,12 +34,12 @@ public class vetClin extends JFrame implements ActionListener
 //method for mirror file
 	public static void mirror() throws IOException
 	{
-		//create a counter √íx√ì
+		//create a counter “x”
 				int x;
-				//fileInput to get the mirror file √ípatientsmirror.txt√ì
+				//fileInput to get the mirror file “patientsmirror.txt”
 				BufferedReader fileInput = null;
 				
-				//create a new file √ítest√ì
+				//create a new file “test”
 				File test = new File("patientsmirror.txt");
 				
 				//check to see if a control file exists
@@ -94,8 +94,8 @@ public class vetClin extends JFrame implements ActionListener
 		
 		menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
-		//create JMenu (√íFile√ì) under which JMenuItems √íMain Menu√ì 
-		//and √íQuit√ì will be
+		//create JMenu (“File”) under which JMenuItems “Main Menu” 
+		//and “Quit” will be
 		menu = new JMenu("File");
 		menuBar.add(menu);
 		
@@ -109,11 +109,11 @@ public class vetClin extends JFrame implements ActionListener
 	
 		//add a button
 		JButton Button;
-		// create a label that says, √íWelcome! Please select an option:√ì
+		// create a label that says, “Welcome! Please select an option:”
 		L = new JLabel("Welcome! Please select an option:");
 		newPane.add(L);
-		//create three buttons, √ínew Patient Record√ì, √íEdit/View a Patient Record√ì
-		// and,  √íDisplay all Patients.√ì
+		//create three buttons, “new Patient Record”, “Edit/View a Patient Record”
+		// and,  “Display all Patients.”
 		Button = new JButton("New Patient Record");
 		Button.addActionListener(this);
 		newPane.add(Button);
@@ -149,7 +149,7 @@ public class vetClin extends JFrame implements ActionListener
 				//Medical/ Vaccine History, and Neutered/sprayed
 				//ID #
 				
-				L1 = new JLabel ("Owner√ïs Name: ");
+				L1 = new JLabel ("Owner’s Name: ");
 				newPane.add(L1 );
 				owner = new JTextField(30);
 				newPane.add(owner);
@@ -204,7 +204,7 @@ public class vetClin extends JFrame implements ActionListener
 				id = new JTextField(30);
 				newPane.add(id);
 
-				//Make button to say √íAdd√ì
+				//Make button to say “Add”
 				
 				Button = new JButton("Add");
 				Button.addActionListener(this);
@@ -231,7 +231,7 @@ public class vetClin extends JFrame implements ActionListener
 				String Owner, Phone, Address, Email, Pet, Breed, Sex, Dob, Mvh, Ns;
 				int Id;
 
-				//declare random access file √ípatient.jsd√ì
+				//declare random access file “patient.jsd”
 				RandomAccessFile patientFile = new RandomAccessFile("patient.jsd","rw");
 
 				//enter the information from each text field into appropriate variables
@@ -252,7 +252,7 @@ public class vetClin extends JFrame implements ActionListener
 				petInfo [Id][1]=Pet;
 				petInfo [Id][2]=Owner;
 
-				//send information to object patientInfo √ípatient√ì
+				//send information to object patientInfo “patient”
 				PatientInfo patient = new PatientInfo(Owner, Phone, Address, Email, Pet, Breed, Sex, Dob, Mvh, Ns, Id);
 
 				//set random access pointer Id
@@ -283,13 +283,13 @@ public class vetClin extends JFrame implements ActionListener
 				JLabel L1;
 				JButton search;
 				
-				//Have JLabel say √íPlease enter ID Number√ì
+				//Have JLabel say “Please enter ID Number”
 				L1= new JLabel("Please enter ID Number");
 				newPane.add(L1);
 				ID = new JTextField(30);
 				newPane.add(ID);
 
-				//have JButton say √íSearch√ì
+				//have JButton say “Search”
 				search = new JButton("Search");
 				search.addActionListener(this);
 				newPane.add(search);
@@ -315,10 +315,10 @@ public class vetClin extends JFrame implements ActionListener
 		bottomPane.setLayout(new BorderLayout());
 		
 		
-		//declare variable patientInfo √ípatient√ì
+		//declare variable patientInfo “patient”
 		PatientInfo patient;
 		int id;
-		//declare RAF √ípatient.jsd√ì
+		//declare RAF “patient.jsd”
 		RandomAccessFile patientFile = new RandomAccessFile("patient.jsd","r");
 		
 		//read id number
@@ -333,7 +333,7 @@ public class vetClin extends JFrame implements ActionListener
 				patientFile.seek((long)id*PatientInfo.RECORD_SIZE);
 				patient = new PatientInfo(patientFile);
 				//print data found into JLabels
-				L1 = new JLabel ("Owner√ïs Name:            ");
+				L1 = new JLabel ("Owner’s Name:            ");
 				newPane.add(L1);
 				
 				l1= new JLabel(patient.getOwner());
@@ -436,7 +436,7 @@ public class vetClin extends JFrame implements ActionListener
 		newPane = new JPanel();
 		PatientInfo patient;
 		
-		//declare RAF √ípatient.jsd√ì
+		//declare RAF “patient.jsd”
 				RandomAccessFile patientFile = new RandomAccessFile("patient.jsd","r");
 		
 		 //for first label use patient ID# from search
@@ -456,7 +456,7 @@ public class vetClin extends JFrame implements ActionListener
 			patientFile.seek((long)id*PatientInfo.RECORD_SIZE);
 			patient = new PatientInfo(patientFile);
 			
-		L1 = new JLabel ("Owner√ïs Name: ");
+		L1 = new JLabel ("Owner’s Name: ");
 		newPane.add(L1 );
 		owner = new JTextField(patient.getOwner(), 30);
 		newPane.add(owner);
@@ -508,7 +508,7 @@ public class vetClin extends JFrame implements ActionListener
 		}
 		}
 		
-		//Make button to say √íSave√ì
+		//Make button to say “Save”
 		Button = new JButton("Save");
 		Button.addActionListener(this);
 		newPane.add(Button);
@@ -534,7 +534,7 @@ public class vetClin extends JFrame implements ActionListener
 		String Owner, Phone, Address, Email, Pet, Breed, Sex, Dob, Mvh, Ns;
 		int Id;
 
-		//declare random access file √ípatient.jsd√ì
+		//declare random access file “patient.jsd”
 		RandomAccessFile patientFile = new RandomAccessFile("patient.jsd","rw");
 
 		//enter the information from each text field into appropriate variables
@@ -555,7 +555,7 @@ public class vetClin extends JFrame implements ActionListener
 		petInfo [Id][1]=Pet;
 		petInfo [Id][2]=Owner;
 		
-		//send information to object patientInfo √ípatient√ì
+		//send information to object patientInfo “patient”
 		PatientInfo patient = new PatientInfo(Owner, Phone, Address, Email, Pet, Breed, Sex, Dob, Mvh, Ns, Id);
 
 		//set random access pointer Id
@@ -601,7 +601,7 @@ public class vetClin extends JFrame implements ActionListener
 		Container Delete = openWin.getContentPane();
 		newPane = new JPanel();
 		//create a JLabel,  and JButton
-		//have JLabel say√ì Are you sure you want to delete?
+		//have JLabel say” Are you sure you want to delete?
 		//JButton yes and JButton cancel
 		L1 = new JLabel("Are you sure you want to delete?");
 		newPane.add(L1);
@@ -680,13 +680,13 @@ public class vetClin extends JFrame implements ActionListener
 			String event = e.getActionCommand();
 			
 			//use if statements for each button and menu option
-			//if quit √íhide();√ì √íSystem.exit(0);√ì
+			//if quit “hide();” “System.exit(0);”
 			if(event.equals("Quit"))
 			{
 				System.exit(0);
 			}
 
-			//if new patient record call method √íNew()√ì
+			//if new patient record call method “New()”
 			else if (event.equals("New Patient Record"))
 			{
 				try
@@ -698,7 +698,7 @@ public class vetClin extends JFrame implements ActionListener
 					System.out.println("error");
 				}
 			}
-			// if edit/view a patient record call method √íSearch()√ì
+			// if edit/view a patient record call method “Search()”
 			else if (event.equals("Edit/View a Patient Record"))
 			{
 				try{
@@ -710,7 +710,7 @@ public class vetClin extends JFrame implements ActionListener
 				}
 					
 			}
-			// if display all patients call method √íDisplay()√ì
+			// if display all patients call method “Display()”
 			else if (event.equals("Display all Patients"))
 			{	
 				try
@@ -722,7 +722,7 @@ public class vetClin extends JFrame implements ActionListener
 					System.out.println("error");
 				}
 			}
-			//if add patient call method √íadd()√ì
+			//if add patient call method “add()”
 			else if (event.equals("Add"))
 			{
 				openWin.dispose();
@@ -736,7 +736,7 @@ public class vetClin extends JFrame implements ActionListener
 				}
 				
 			}
-			//if search call method √íretrieve()√ì
+			//if search call method “retrieve()”
 			else if (event.equals("Search"))
 			{
 				openWin.dispose();
@@ -751,7 +751,7 @@ public class vetClin extends JFrame implements ActionListener
 				}
 				
 			}
-			//if edit call method √íedit()√ì
+			//if edit call method “edit()”
 			else if (event.equals("Edit"))
 			{
 				
@@ -764,7 +764,7 @@ public class vetClin extends JFrame implements ActionListener
 					System.out.println("error");
 				}
 			}
-			//if save call method √ísaved()√ì
+			//if save call method “saved()”
 			else if (event.equals("Save"))
 			{
 				openWin.dispose();
@@ -779,12 +779,12 @@ public class vetClin extends JFrame implements ActionListener
 				}
 				
 			}
-			//if delete  call method √ídelete()√ì
+			//if delete  call method “delete()”
 			else if (event.equals("Delete"))
 			{
 				delete();
 			}
-			//if yes call method √ídeleting()√ì
+			//if yes call method “deleting()”
 			else if (event.equals("Yes"))
 			{
 				openWin.dispose();
@@ -812,7 +812,7 @@ public class vetClin extends JFrame implements ActionListener
 	public static void main(String [] args) throws IOException
 	{
 
-		//initialize a vetClinic window, set title to √íJava Vet Clinic Records√ì, 
+		//initialize a vetClinic window, set title to “Java Vet Clinic Records”, 
 		//set size to 800 by 600
 		vetClin window = new vetClin();
 		window.setTitle("Java Vet Clinic Records");
